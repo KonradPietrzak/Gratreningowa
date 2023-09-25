@@ -9,7 +9,7 @@ export default class MainScene extends Phaser.Scene {
 
     create(){
         console.log("create")
-        thios.player = new Phaser.Physics.Matter.Sprite(this.matter.world);
+        this.player = new Phaser.Physics.Matter.Sprite(this.matter.world);
         this.inputKeys = this.inputKeys.keyboard.addKeys({
             up: Phaser.Input.Keyboard.KeyCodes.W,
             down: Phaser.Input.Keyboard.KeyCodes.S,
@@ -34,5 +34,6 @@ export default class MainScene extends Phaser.Scene {
         }
         playerVelocity.scale(speed);
         this.player.setVelocity(playerVelocity.x,playerVelocity.y);
+        
     }
 }
