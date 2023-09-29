@@ -17,8 +17,8 @@ export default class MainScene extends Phaser.Scene {
     console.log("create");
     this.player = new Phaser.Physics.Matter.Sprite(
       this.matter.world,
-      0,
-      0,
+      40,
+      40,
       "female",
       "townsfolk_f_idle_1"
     );
@@ -28,6 +28,7 @@ export default class MainScene extends Phaser.Scene {
       left: Phaser.Input.Keyboard.KeyCodes.A,
       right: Phaser.Input.Keyboard.KeyCodes.D,
     });
+    this.add.existing(this.player);
   }
 
   update() {
