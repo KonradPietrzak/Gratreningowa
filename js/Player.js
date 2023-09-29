@@ -20,7 +20,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         scene.load.animation('femal_anim', 'assets/images/female_anim.json')
     }
 
-    ge velocity () {
+    get velocity () {
         return this.body.velocity;
     }
 
@@ -40,7 +40,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         }
         playerVelocity.scale(speed);
         this.setVelocity(playerVelocity.x,playerVelocity.y);
-        if(Math.abs(this.velocity.x) > 0.1 || Math.abs(this.velocity.y) . 0.1) {
+        if(Math.abs(this.velocity.x) > 0.1 || Math.abs(this.velocity.y) > 0.1) {
             this.player.anims.play('female_walk',true);
         }else {
             this.player.anims.play('female_idle',true);
