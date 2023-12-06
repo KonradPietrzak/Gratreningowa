@@ -1,33 +1,51 @@
 import Player from "./Player.js";
 export default class MainScene extends Phaser.Scene {
-    constructor (){
-        super("MainScene");
-    }
+  constructor() {
+    super("MainScene");
+  }
 
-    preload(){
-        Player.preload(this);
-        this.load.image('tiles','asstes/images/RPG Nature Tileset.png');
-        this.load.tilemapTiledJSON('map', 'assets/images/map.json');
-    }
+  preload() {
+    console.log("preload");
+    this.load.atlas(
+      "female",
+      "assets/images/female.png",
+      "assets/images/female_atlas.json"
+    );
+  }
 
-    create(){
-        const map = this.make.tilemap({key: 'map'})
-        const tileset = map.addTilesetImage('RPG Nature Tileset', 'tiles',32,32,0,0);
-        const layer1 = map.createStaticLayer('Tile Layer 1', tileset,0,0);
-        const layer2 = map.createStaticLayer('Tile Layer 2', tileset,0,0);
-        layer1.setCollisionByProperty({collides:true});
-        this.matter.world.convertTilemapLayer(layer1);
-        this.player = new Player({scene:this,x:100,y:100,texture:'female',frame:'townsfolk_f_idle_1'});
-        this.player.inputKeys = this.inputKeys.keyboard.addKeys({
-            up: Phaser.Input.Keyboard.KeyCodes.W,
-            down: Phaser.Input.Keyboard.KeyCodes.S,
-            left: Phaser.Input.Keyboard.KeyCodes.A,
-            right: Phaser.Input.Keyboard.KeyCodes.D,
-        })
-    }
+  create() {
+    console.log("create");
+    this.player = new Phaser.Physics.Matter.Sprite(
+      this.matter.world,
+      40,
+      40,
+      "female",
+      "townsfolk_f_idle_1"
+    );
+    this.inputKeys = this.input.keyboard.addKeys({
+      up: Phaser.Input.Keyboard.KeyCodes.W,
+      down: Phaser.Input.Keyboard.KeyCodes.S,
+      left: Phaser.Input.Keyboard.KeyCodes.A,
+      right: Phaser.Input.Keyboard.KeyCodes.D,
+    });
+    this.add.existing(this.player);
+  }
 
-    update(){
-        this.player.update();
+  update() {
+    console.log("update");
+    const speed = 2.5;
+    let playerVelocity = new Phaser.Math.Vector2();
+    if (this.inputKeys.left.isDown) {
+      playerVelocity.x = -1;
+    } else if (this.inputKeys.right.isDown) {
+      playerVelocity.x = 1;
     }
-
+    if (this.inputKeys.up.isDown) {
+      playerVelocity.y = -1;
+    } else if (this.inputKeys.down.isDown) {
+      playerVelocity.y = 1;
+    }
+    playerVelocity.scale(speed);
+    this.player.setVelocity(playerVelocity.x, playerVelocity.y);
+  }
 }
