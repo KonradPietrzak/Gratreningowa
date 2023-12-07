@@ -7,9 +7,13 @@ export default class MainScene extends Phaser.Scene {
   preload() {
     console.log("preload");
     this.load.atlas(
-      "female",
-      "assets/images/female.png",
-      "assets/images/female_atlas.json"
+      'female',
+      'assets/images/female.png',
+      'assets/images/female_atlas.json'
+    );
+    this.load.animation(
+      'female_anim',
+    'assets/images/female_anim.json'
     );
   }
 
@@ -19,20 +23,19 @@ export default class MainScene extends Phaser.Scene {
       this.matter.world,
       40,
       40,
-      "female",
-      "townsfolk_f_idle_1"
+      'female',
     );
+    this.add.existing(this.player);
     this.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
       left: Phaser.Input.Keyboard.KeyCodes.A,
       right: Phaser.Input.Keyboard.KeyCodes.D,
     });
-    this.add.existing(this.player);
   }
 
   update() {
-    console.log("update");
+    this.player.anims.play('female_idle', true)
     const speed = 2.5;
     let playerVelocity = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {
