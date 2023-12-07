@@ -15,7 +15,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         this.setFixedRotation();
     }
 
-    static preload(scene ){
+    static preload(scene){
         scene.load.atlas('female', 'assets/images/female.png', 'assets/images/female_atlases.json');
         scene.load.animation('femal_anim', 'assets/images/female_anim.json')
     }
@@ -25,7 +25,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     }
 
     update(){
-
+        this.player.anims.play('female_idle',true);
         const speed = 2.5;
         let playerVelocity = new haser.Math.Vector2();
         if(this.inputKeys.left.isDown){
