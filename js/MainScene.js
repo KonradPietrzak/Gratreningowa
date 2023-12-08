@@ -5,15 +5,15 @@ export default class MainScene extends Phaser.Scene {
   }
 
   preload() {
-Player.preload(this);
+    Player.preload(this);
   }
 
   create() {
     console.log("create");
     this.player = new Player({
       scene:this,
-      x:0,
-      y:0,
+      x:40,
+      y:40,
       texture:'female',
       frame:'townfolk_f_idle_1'
   });
