@@ -8,6 +8,7 @@ export default class MainScene extends Phaser.Scene {
     Player.preload(this);
     this.load.image('tiles', 'assets/images/RPG Nature Tileset.png');
     this.load.tilemapTiledJSON('map', 'assets/images/map.json');
+    this.load.atlas('resources', 'assets/images/resources.png', 'assets/images/resources.json');
   }
 
   create() {
@@ -20,6 +21,13 @@ export default class MainScene extends Phaser.Scene {
   const layer2 = map.createLayer('Tile Layer 2', tileset,0 ,0);
   layer1.setCollisionByProperty({collides:true})
   this.matter.world.convertTilemapLayer(layer1)
+
+let tree = new Phaser.Physics.Matter.Sprite(this.matter.world, 50, 50, 'resources', 'tree')
+let rock = new Phaser.Physics.Matter.Sprite(this.matter.world, 150, 150, 'resources', 'rock')
+this.add.existing(tree);
+this.add.existing(rock);
+
+
   this.player = new Player({
     scene:this,
     x:40,
