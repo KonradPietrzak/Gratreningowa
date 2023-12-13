@@ -8,7 +8,7 @@ export default class MainScene extends Phaser.Scene {
     Player.preload(this);
     this.load.image('tiles', 'assets/images/RPG Nature Tileset.png');
     this.load.tilemapTiledJSON('map', 'assets/images/map.json');
-    this.load.atlas('resources', 'assets/images/resources.png', 'assets/images/resources.json');
+    this.load.atlas('resources', 'assets/images/resources.png', 'assets/images/resources_atlas.json');
   }
 
   create() {
@@ -22,10 +22,7 @@ export default class MainScene extends Phaser.Scene {
   layer1.setCollisionByProperty({collides:true})
   this.matter.world.convertTilemapLayer(layer1)
 
-let tree = new Phaser.Physics.Matter.Sprite(this.matter.world, 50, 50, 'resources', 'tree')
-let rock = new Phaser.Physics.Matter.Sprite(this.matter.world, 150, 150, 'resources', 'rock')
-this.add.existing(tree);
-this.add.existing(rock);
+  this.addResources();
 
 
   this.player = new Player({
@@ -42,6 +39,15 @@ this.add.existing(rock);
       right: Phaser.Input.Keyboard.KeyCodes.D,
     });
   }
+
+addResources(){
+  const resources = this.map.getObjectLayer('Resources');
+  resources.objects.forEach(resource =>{
+    let resourceItem = new Phaser.Physics.Matter.Sprite(this.matter.world, resource.x, resource.y, 'resources', resource.type);
+    resourceItem.setStatic(true);
+    this.add.existing(resourceItem);
+  })
+}
 update(){
   this.player.update();
 }
