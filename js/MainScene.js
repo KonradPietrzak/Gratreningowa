@@ -16,6 +16,7 @@ export default class MainScene extends Phaser.Scene {
     
   
   const map = this.make.tilemap({key:'map'});
+  this.map = map;
   const tileset = map.addTilesetImage('RPG Nature Tileset', 'tiles', 32, 32, 0, 0);
   const layer1 = map.createLayer('Tile Layer 1', tileset,0 ,0);
   const layer2 = map.createLayer('Tile Layer 2', tileset,0 ,0);

@@ -8,7 +8,6 @@
          "encoding":"base64",
          "height":16,
          "id":1,
-         "locked":true,
          "name":"Tile Layer 1",
          "opacity":1,
          "type":"tilelayer",
@@ -19,11 +18,10 @@
         }, 
         {
          "compression":"",
-         "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArAAAAKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKwAAACsAAAArAAAAKwAAACsAAAAAAAAAKwAAACsAAAAAAAAAKwAAACsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsAAAArAAAAKwAAACsAAAArAAAAKwAAACsAAAArAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArAAAAKwAAACsAAAArAAAAAAAAACsAAAArAAAAKwAAACsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKwAAACsAAAArAAAAKwAAACsAAAArAAAAKwAAACsAAAArAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsAAAArAAAAKwAAACsAAAArAAAAAAAAACsAAAArAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsAAAAAAAAAKwAAACsAAAArAAAAKwAAACsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArAAAAAAAAAAAAAAArAAAAKwAAACsAAAArAAAAKwAAACsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsAAAArAAAAAAAAACsAAAArAAAAKwAAACsAAAArAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsAAAArAAAAAAAAAAAAAAArAAAAKwAAACsAAAArAAAAKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+         "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJMAAACTAAAAkwAAAJMAAACTAAAAqAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKYAAACoAAAAAAAAAAAAAAAAAAAAkwAAAJMAAACTAAAAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4AAACTAAAAkwAAAJMAAACTAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4AAACTAAAAkwAAAJMAAACTAAAAkwAAAJMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4AAACTAAAAkwAAAJMAAACTAAAAkwAAAAAAAACmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkwAAAJMAAACTAAAAkwAAAJMAAAB+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4AAAAAAAAAkwAAAJMAAACTAAAAkwAAAKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKYAAACTAAAAkwAAAJMAAACTAAAAAAAAAKYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApgAAAKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
          "encoding":"base64",
          "height":16,
          "id":2,
-         "locked":true,
          "name":"Tile Layer 2",
          "opacity":1,
          "type":"tilelayer",
@@ -34,56 +32,62 @@
         }, 
         {
          "draworder":"topdown",
-         "id":6,
+         "id":3,
          "name":"Resources",
          "objects":[
                 {
                  "gid":21,
                  "height":32,
-                 "id":20,
+                 "id":1,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.8
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"tree",
                  "visible":true,
                  "width":32,
                  "x":96,
-                 "y":96
+                 "y":128
                 }, 
                 {
                  "gid":22,
                  "height":32,
-                 "id":21,
+                 "id":2,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"bush",
                  "visible":true,
                  "width":32,
-                 "x":160,
-                 "y":160
-                }, 
-                {
-                 "gid":22,
-                 "height":32,
-                 "id":22,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":160,
+                 "x":192,
                  "y":128
                 }, 
                 {
                  "gid":23,
                  "height":32,
-                 "id":23,
+                 "id":3,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"rock",
                  "visible":true,
                  "width":32,
-                 "x":256,
-                 "y":96
+                 "x":288,
+                 "y":288
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -91,8 +95,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":7,
- "nextobjectid":24,
+ "nextlayerid":4,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",
@@ -101,7 +105,7 @@
         {
          "columns":20,
          "firstgid":1,
-         "image":"RPG Nature Tileset.png",
+         "image":"Gra\/RPG Nature Tileset.png",
          "imageheight":288,
          "imagewidth":641,
          "margin":0,
@@ -128,7 +132,7 @@
                          "type":"float",
                          "value":0.6
                         }],
-                 "type":"bysh"
+                 "type":"bush"
                 }, 
                 {
                  "id":22,
@@ -145,27 +149,28 @@
                  "objectgroup":
                     {
                      "draworder":"index",
+                     "id":2,
                      "name":"",
                      "objects":[
                             {
-                             "height":8,
+                             "height":32,
                              "id":1,
                              "name":"",
                              "rotation":0,
                              "type":"",
                              "visible":true,
-                             "width":32,
+                             "width":8,
                              "x":0,
                              "y":0
                             }, 
                             {
-                             "height":32,
-                             "id":2,
+                             "height":8,
+                             "id":3,
                              "name":"",
                              "rotation":0,
                              "type":"",
                              "visible":true,
-                             "width":8,
+                             "width":32,
                              "x":0,
                              "y":0
                             }],
@@ -187,6 +192,7 @@
                  "objectgroup":
                     {
                      "draworder":"index",
+                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -218,6 +224,7 @@
                  "objectgroup":
                     {
                      "draworder":"index",
+                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -240,7 +247,7 @@
                              "visible":true,
                              "width":8,
                              "x":24,
-                             "y":0.000909090909091859
+                             "y":0
                             }],
                      "opacity":1,
                      "type":"objectgroup",
@@ -260,6 +267,7 @@
                  "objectgroup":
                     {
                      "draworder":"index",
+                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -291,18 +299,13 @@
                  "objectgroup":
                     {
                      "draworder":"index",
+                     "id":2,
                      "name":"",
                      "objects":[
                             {
                              "height":32,
-                             "id":2,
+                             "id":1,
                              "name":"",
-                             "properties":[
-                                    {
-                                     "name":"collides",
-                                     "type":"bool",
-                                     "value":true
-                                    }],
                              "rotation":0,
                              "type":"",
                              "visible":true,
@@ -328,6 +331,7 @@
                  "objectgroup":
                     {
                      "draworder":"index",
+                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -370,6 +374,7 @@
                  "objectgroup":
                     {
                      "draworder":"index",
+                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -401,6 +406,7 @@
                  "objectgroup":
                     {
                      "draworder":"index",
+                     "id":2,
                      "name":"",
                      "objects":[
                             {
