@@ -22,7 +22,6 @@ export default class MainScene extends Phaser.Scene {
   const layer2 = map.createLayer('Tile Layer 2', tileset,0 ,0);
   layer1.setCollisionByProperty({collides:true})
   this.matter.world.convertTilemapLayer(layer1)
-
   this.addResources();
 
 
@@ -44,9 +43,19 @@ export default class MainScene extends Phaser.Scene {
 addResources(){
   const resources = this.map.getObjectLayer('Resources');
   resources.objects.forEach(resource =>{
-    let resourceItem = new Phaser.Physics.Matter.Sprite(this.matter.world, resource.x, resource.y, 'resources', resource.type);
-    resourceItem.setStatic(true);
-    this.add.existing(resourceItem);
+    let resItem = new Phaser.Physics.Matter.Sprite(this.matter.world, resource.x, resource.y, 'resources', resource.type);
+    let yOrigin = resource.properties.fin(p=>p.name == 'yOrigin').value;
+    resItem.x += resItem.width/2;
+    resItem.y -= resItem.width/2;
+    resItem.y = resItem.y + resItem,height * (yOrigin - 0,5);
+
+    const {Body, Bodies} = Phaser.Physics.Matter.Matter;
+    var circleCollider = Bodies.circle(resItem.x, resItem.y,12, {isSensor:false, label:'collider'});
+    
+    resItem.setExistingBody(circleCollider);
+    resItem.setStatic(true);
+    resItem.setOrigin(0.5, yOrigin);
+    this.add.existing(resItem);
   })
 }
 update(){
