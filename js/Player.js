@@ -2,6 +2,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     constructor(data){
         let{scene,x,y,texture,frame} = data;
         super(scene.matter.world,x,y,texture,frame);
+        this.touching = [];
         this.scene.add.existing(this);
         //Weapon
         this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene,0,0,'items',162);
@@ -18,6 +19,8 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         });
         this.setExistingBody(compoundBody);
         this.setFixedRotation();
+
+        this.CreateMiningCollisions(playerSensor);
 
         this.scene.input.on('pointermove', pointer => this.setFlipX(pointer.worldX < this.x));
     }
@@ -73,8 +76,16 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         }else{
             this.spriteWeapon.setAngle(this.weaponRotation);
         }
-
-
-    
+    }
+    CreateMiningCollisions(playerSensor){
+        this.scene.matterCollision.addOnCollideStart({
+            objectA:[playerSensor],
+            callback: other =>{ 
+                if(other.bodyB.isSensor) return;
+                this.touching.push(other.gameObjectB);
+                console.log(this.touching.length,other.gameObjectB.name);
+            },
+            context: this.scene,
+        });
     }
 }
