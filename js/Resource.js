@@ -10,6 +10,7 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
 
         let yOrigin = resource.properties.find(p=>p.name == 'yOrigin').value;
         this.name = resource.type;
+        this health = 5;
         this.x += this.width/2;
         this.y -= this.height/2;
         this.y = this.y + this.height * (yOrigin - 0,5);
@@ -20,5 +21,15 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         this.setExistingBody(circleCollider);
         this.setStatic(true);
         this.setOrigin(0.5, yOrigin);
+        }
+    
+        get deadt(){
+            return this.health <= 0;
+        }
+
+        hit = () => {
+            if(this.sound) this.sound.play();
+            this.health--;
+            console.log('Hitting:${this.name} Health:${this.health}');
         }
 }

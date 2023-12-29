@@ -69,6 +69,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
             this.weaponRotation = 0;
         }
         if(this.weaponRotation > 100){
+            this.whackStuff();
             this.weaponRotation = 0;
         }
         if(this.flipX){
@@ -77,6 +78,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
             this.spriteWeapon.setAngle(this.weaponRotation);
         }
     }
+
     CreateMiningCollisions(playerSensor){
         this.scene.matterCollision.addOnCollideStart({
             objectA:[playerSensor],
@@ -87,5 +89,21 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
             },
             context: this.scene,
         });
+
+        this.scene.matterCollision.addOnCollideEnd({
+            objectA:[playerSensor],
+            callback: other => {
+                this.touching = this.touching.filter(gameObject => gameObject != other.gamObjectB);
+                console.log(this.touching.lenght);
+            },
+            context: this.scene,
+        })
+    }
+    whackStuff(){
+        this.touching = this.touching.filter(gameObject => gameObject.hit && !gameObject.dead);
+    this.touching.forEach(gameObject =>{
+        gameObject.hit();
+        if(gameobject.dead) gameobject.destroy();
+    })
     }
 }

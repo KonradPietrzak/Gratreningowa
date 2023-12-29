@@ -1,6 +1,6 @@
 import Player from "./Player.js";
 import Resource from "./Resource.js";
-export default class MainScene extends Phaser.Scene {
+export default class MainScene extends Phaser.Scene{
   constructor() {
     super("MainScene");
   }
@@ -29,8 +29,8 @@ export default class MainScene extends Phaser.Scene {
 
   this.player = new Player({
     scene:this,
-    x:40,
-    y:40,
+    x:200,
+    y:200,
     texture:'female',
     frame:'townfolk_f_idle_1'
 });
