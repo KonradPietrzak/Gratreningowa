@@ -101,9 +101,9 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     }
     whackStuff(){
         this.touching = this.touching.filter(gameObject => gameObject.hit && !gameObject.dead);
-    this.touching.forEach(gameObject =>{
+        this.touching.forEach(gameObject =>{
         gameObject.hit();
-        if(gameobject.dead) gameobject.destroy();
+        if(gameObject.dead) gameObject.destroy();
     })
     }
 }
