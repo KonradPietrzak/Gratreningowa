@@ -1,3 +1,4 @@
+import DropItem from "./DropItem.js";
 export default class Resource extends Phaser.Physics.Matter.Sprite {
     static preload(scene){
         scene.load.atlas('resources', 'assets/images/resources.png', 'assets/images/resources_atlas.json');
@@ -13,6 +14,7 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         this.scene.add.existing(this);
 
         let yOrigin = resource.properties.find(p=>p.name == 'yOrigin').value;
+        this.drops = JSON.parse(resource.properties.find(p=>p.name=='drops').value);
         this.name = resource.type;
         this.health = 5;
         this.sound = this.scene.sound.add(this.name);
@@ -36,5 +38,8 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
             if(this.sound) this.sound.play();
             this.health--;
             console.log('Hitting:${this.name} Health:${this.health}');
+            if(this.dead){
+                this.drops.forEach(drop => new DropItem({scene:this.scene,x:this.y,frame:drop}));
+            }
         }
 }

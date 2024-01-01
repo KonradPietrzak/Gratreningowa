@@ -42,6 +42,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
+                        {
                          "name":"yOrigin",
                          "type":"float",
                          "value":0.8
@@ -60,6 +65,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[228,228]"
+                        }, 
+                        {
                          "name":"yOrigin",
                          "type":"float",
                          "value":0.6
@@ -77,6 +87,11 @@
                  "id":3,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[273,273]"
+                        }, 
                         {
                          "name":"yOrigin",
                          "type":"float",
@@ -105,7 +120,7 @@
         {
          "columns":20,
          "firstgid":1,
-         "image":"Gra\/RPG Nature Tileset.png",
+         "image":"RPG Nature Tileset.png",
          "imageheight":288,
          "imagewidth":641,
          "margin":0,
@@ -118,6 +133,11 @@
                  "id":20,
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
+                        {
                          "name":"yOrigin",
                          "type":"float",
                          "value":0.8
@@ -128,6 +148,11 @@
                  "id":21,
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[228,228]"
+                        }, 
+                        {
                          "name":"yOrigin",
                          "type":"float",
                          "value":0.6
@@ -137,6 +162,11 @@
                 {
                  "id":22,
                  "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[273,273]"
+                        }, 
                         {
                          "name":"yOrigin",
                          "type":"float",
@@ -149,7 +179,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -192,7 +221,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -224,7 +252,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -267,7 +294,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -299,7 +325,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -331,7 +356,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -374,7 +398,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -406,7 +429,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
