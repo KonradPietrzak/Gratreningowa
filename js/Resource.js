@@ -5,6 +5,7 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         scene.load.audio('tree','assets/images/audio/tree.wav');
         scene.load.audio('rock','assets/images/audio/rock.wav');
         scene.load.audio('bush','assets/images/audio/bush.wav');
+        scene.load.audio('pickup','assets/images/audio/pickup.wav');
     }
     
 
