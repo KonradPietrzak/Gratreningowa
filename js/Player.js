@@ -1,9 +1,10 @@
+import MetterEntity from "./MatterEntity";
+
 export default class Player extends Phaser.Physics.Matter.Sprite {
-    constructor(data){
+    constructor({...data}){
         let{scene,x,y,texture,frame} = data;
-        super(scene.matter.world,x,y,texture,frame);
+        super({...data,health:2,drops:[],name:'player'});
         this.touching = [];
-        this.scene.add.existing(this);
         //Weapon
         this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene,0,0,'items',162);
         this.spriteWeapon.setOrigin(0.25,0.75);
@@ -30,10 +31,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         scene.load.atlas('female', 'assets/images/female.png', 'assets/images/female_atlas.json');
         scene.load.animation('female_anim', 'assets/images/female_anim.json');
         scene.load.spritesheet('items','assets/images/items.png',{frameWidth:32,frameHeight:32});
-    }
-
-    get velocity () {
-        return this.body.velocity;
+        scene.load.audio('player','assets/images/audio/player.wav');
     }
 
     update(){
