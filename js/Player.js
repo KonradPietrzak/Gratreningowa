@@ -1,12 +1,13 @@
-import MetterEntity from "./MatterEntity";
+import MetterEntity from "./MatterEntity.js";
 
 export default class Player extends Phaser.Physics.Matter.Sprite {
-    constructor({...data}){
+    constructor(data){
         let{scene,x,y,texture,frame} = data;
         super({...data,health:2,drops:[],name:'player'});
         this.touching = [];
         //Weapon
         this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene,0,0,'items',162);
+        this.spriteWeapon.setScale(0.8);
         this.spriteWeapon.setOrigin(0.25,0.75);
         this.scene.add.existing(this.spriteWeapon);
    
@@ -20,7 +21,6 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         });
         this.setExistingBody(compoundBody);
         this.setFixedRotation();
-
         this.CreateMiningCollisions(playerSensor);
         this.CreatePickupCollisions(playerCollider);
         this.scene.input.on('pointermove', pointer => this.setFlipX(pointer.worldX < this.x));

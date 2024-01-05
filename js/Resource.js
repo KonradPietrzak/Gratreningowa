@@ -1,3 +1,4 @@
+import MatterEntity from "./MatterEntity.js";
 export default class Resource extends MatterEntity {
     static preload(scene){
         scene.load.atlas('resources', 'assets/images/resources.png', 'assets/images/resources_atlas.json');
@@ -10,8 +11,8 @@ export default class Resource extends MatterEntity {
 
     constructor(data){
         let {scene, resource} = data;
-        this.drops = JSON.parse(resource.properties.find(p=>p.name=='drops').value);
-        this.depth = resource.properties.find(p=>p.name=='depth').value;
+        let drops = JSON.parse(resource.properties.find(p=>p.name=='drops').value);
+        let depth = resource.properties.find(p=>p.name=='depth').value;
         super({scene,x:resource.x,y:resource.y,texture:'resources',frame:resource.type,drops,depth,health:5,name:resource.type});
 
         let yOrigin = resource.properties.find(p=>p.name == 'yOrigin').value;

@@ -1,6 +1,4 @@
 import DropItem from "./DropItem.js";
-import Resource from "./Resource.js";
-
 export default class MetterEntity extends Phaser.Physics.Matter.Sprite {
     constructor(data){
         let {name,scene,x,y,health,drops,texture,frame,depth} = data;
@@ -9,7 +7,7 @@ export default class MetterEntity extends Phaser.Physics.Matter.Sprite {
         this.y -= this.height/2;
         this.depth = depth || 1;
         this.name = name;
-        this.health = heatlh;
+        this.health = health;
         this.drops = drops;
         this._position = new Phaser.Math.Vector2(this.x,this.y);
         if(this.name) this.sound = this.scene.sound.add(this.name);
@@ -18,7 +16,7 @@ export default class MetterEntity extends Phaser.Physics.Matter.Sprite {
 
     get position() {
         this._position.set(this.x,this.y);
-        return this._position;aaa
+        return this._position;
     }
 
     get velocity() {
